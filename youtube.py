@@ -12,4 +12,4 @@ yt = YouTube(url, on_progress_callback=on_progress)
 
 download_path = '/video'
 
-yt = yt.streams.filter(res="1080p").filter(audio_codec="mp3").first().download(download_path)
+yt = yt.streams.get_highest_resolution().download(download_path)
